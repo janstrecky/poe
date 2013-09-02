@@ -1,7 +1,8 @@
 /* Dependencies
    TODO:
     - Use CDN for bootstrap/bootswatch (done)
-    - Create a variable for the item template instead of Ajax get
+    - Add fixed headers to mod/item tables
+    - Create a variable for the item template instead of Ajax get (done)
  * ====================== */
 var express     = require("express"),
     http        = require("http"),
