@@ -1,0 +1,30 @@
+//- script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js") original
+//- script(src="//code.jquery.com/jquery-latest.min.js") latest
+script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+script(src="/libs/bootstrap/dist/js/bootstrap.min.js")
+
+script(src="/libs/jquery.cookie/jquery.cookie.js")
+script(src="/libs/jquery.fixedheadertable/jquery.fixedheadertable.min.js")
+script(src="/libs/underscore/underscore-min.js")
+script(src="/libs/handlebars/handlebars.js")
+// script(src="/socket.io/socket.io.js")
+//- script(src="/libs/prism/prism.js")
+//- uncomment if sugar.js is needed script(src="/libs/sugarjs/sugar.min.js")
+script(src="/js/main.js")
+script.
+
+    $("table").fixedHeaderTable("show");
+
+    //- set the navbar active for the current url
+    $("#navbar-!{url}").addClass("active");
+
+    $("#theme-nav ul li").children("a").on("click", function(e) {
+        e.preventDefault();
+        var newTheme = $(this).text().toLowerCase();
+        console.log("Clicked " + newTheme);
+
+        $.cookie("app_theme", newTheme, { expires: 365 * 10, path: "/" });
+        $("#theme-css").attr("href", "/libs/bootswatch/" + newTheme + "/bootstrap.min.css");
+    });
+
+block script

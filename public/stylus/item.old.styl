@@ -1,0 +1,152 @@
+/*@font-face {
+    font-family: Fontin SmallCaps;
+    src: url("../font/fontin-smallcaps.ttf");
+    font-weight: 600;
+}*/
+
+// Fonts generated bt FontSquirrel
+// This fixes the antialiasing issue
+@font-face {
+    font-family: "Fontin SmallCaps";
+    src: url("../font/fontin-smallcaps-webfont.eot");
+    src: url("../font/fontin-smallcaps-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../font/fontin-smallcaps-webfont.woff") format("woff"),
+         url("../font/fontin-smallcaps-webfont.ttf") format("truetype"),
+         url("../font/fontin-smallcaps-webfont.svg#fontin_smallcapssmallcaps") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #1A1A18;
+}
+
+.item-container {
+    font-family: "Fontin SmallCaps";
+    position: absolute;
+    display: none;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 70%;
+    font-weight: normal;
+}
+
+.item-content {
+    text-align: center;
+    color: #EFEFEF;
+    font-size: 1.4em;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9sECAQUBd3UQ2UAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAAlxJREFUeNrt1DEBAAAIw7CBf2mIwgAOSCT0aCWZAC+1BGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGAAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGAAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAHBZNfoCzIySIwEAAAAASUVORK5CYII=");
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-bottom: 7px;
+}
+
+.title-bar {
+    background: top left repeat-x;
+    position: relative;
+    background-image: url("../img/headermiddle.png");
+    height: 53px;
+}
+
+.title-bar-l {
+    background: url("../img/headerleft.png") no-repeat top left;
+    height: 53px;
+    width: 43px;
+    left: -11px;
+    position: absolute;
+}
+
+.title-bar-r {
+    background-image: url("../img/headerright.png");
+    height: 53px;
+    width: 43px;
+    right: -11px;
+    position: absolute;
+}
+
+.title-bar-rare {
+    background: top left repeat-x;
+    position: relative;
+    background-image: url("../img/rare_headermiddle.png");
+    height: 54px;
+}
+
+.title-bar-l-rare {
+    background: url("../img/rare_headerleft.png") no-repeat top left;
+    height: 54px;
+    width: 44px;
+    left: -11px; // a
+    position: absolute;
+}
+
+.title-bar-r-rare {
+    background-image: url("../img/rare_headerright.png");
+    height: 54px;
+    width: 44px;
+    right: -12px; // a
+    position: absolute;
+}
+
+.item-name,
+.item-type {
+    font-size: 18px;
+    position: relative;
+    top: 2px;
+}
+
+.item-type {
+    top: 0px;
+}
+
+.separator {
+    background: center no-repeat;
+    position: relative;
+    background-image: url("../img/separator.png");
+    height: 7.91075px;
+    margin: 1px 0px;
+}
+
+.separator-rare {
+    background: center no-repeat;
+    position: relative;
+    background-image: url("../img/rare_separator.png");
+    height: 7.91075px;
+    margin: 1px 0px;
+}
+
+.implicit-mod,
+.explicit-mod {
+    color: #8888ff;
+    white-space: nowrap;
+}
+
+.text-unique,
+.flavor-text { color: #af6025; }
+.flavor-text {
+    font-style: italic;
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space: nowrap;
+}
+
+.text-rare { color: #F4F285; }
+
+.text {
+    display: inline-block;
+    padding: 0 10px;
+    color: #777;
+}
+
+.item-stats { padding-top: 3px; }
+.item-effects {
+    color: #a38d6d;
+}
+
+.default { color: #fff }
+.augmented { color: #88f }
+.unmet { color: #d20000 }
+.physical-damage { color: #fff }
+.fire-damage { color: #960000 }
+.cold-damage { color: #366492 }
+.lightning-damage { color: gold }
+.chaos-damage { color: #d02090 }

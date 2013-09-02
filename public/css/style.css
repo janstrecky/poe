@@ -1,0 +1,8 @@
+body{padding-top:65px;}
+@media screen and (max-width: 768px){body{padding-top:0}
+}th,td{text-align:center}
+.navbar .nav-divider{height:30px;margin:10px 9px;border-right:1px solid #444;border-left:1px solid #444;-khtml-opacity:.2;-moz-opacity:.2;opacity:.2;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";filter:alpha(opacity=20)}
+.small-img{max-height:25px}
+a.ez:hover{background:#fff;text-decoration:none}
+a.ez span{display:none;margin-left:8px;text-align:center}
+a.ez:hover span{display:inline;position:absolute;background:#fff;color:#6c6c6c;z-index:100}

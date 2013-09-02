@@ -1,0 +1,166 @@
+// Fonts generated bt FontSquirrel
+// This fixes the antialiasing issue
+@font-face {
+    font-family: "Fontin SmallCaps";
+    src: url("../font/fontin-smallcaps-webfont.eot");
+    src: url("../font/fontin-smallcaps-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../font/fontin-smallcaps-webfont.woff") format("woff"),
+         url("../font/fontin-smallcaps-webfont.ttf") format("truetype"),
+         url("../font/fontin-smallcaps-webfont.svg#fontin_smallcapssmallcaps") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+template(name, file, width, height) {
+    /* name 0, filename 1, width 2, height 3 */
+    .header-{name} {
+        background: top left repeat-x;
+        position: relative;
+        background-image: url("../img/poe/ItemHeader"file"Middle.png");
+        height: height;
+
+        if height == 34 { .item-type { top: 4px; } }
+
+        .header-{name}-l {
+            background: url("../img/poe/ItemHeader"file"Left.png") no-repeat top left;
+            height: height;
+            width: width;
+            left: -11px; // ???
+            position: absolute;
+        }
+
+        .header-{name}-r {
+            background-image: url("../img/poe/ItemHeader"file"Right.png");
+            height: height;
+            width: width;
+            right: -11px; // ???
+            position: absolute;
+        }
+    }
+
+    .separator-{name} {
+        background: center no-repeat;
+        position: relative;
+        background-image url("../img/poe/Separator"file".png");
+        height: 8px;
+        margin: 1px 0;
+    }
+}
+
+.item {
+    display: inline-block; // Make the "hitbox" the same size as the image
+
+    .item-container {
+        font-family: "Fontin SmallCaps";
+        position: absolute;
+        display: none;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 70%;
+        font-weight: normal;
+    }
+
+    .item-content {
+        text-align: center;
+        color: #EFEFEF;
+        font-size: 1.4em;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9sECAQUBd3UQ2UAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAAlxJREFUeNrt1DEBAAAIw7CBf2mIwgAOSCT0aCWZAC+1BGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGAAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGAAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAHBZNfoCzIySIwEAAAAASUVORK5CYII=");
+        padding-left: 11px;
+        padding-right: 11px;
+        padding-bottom: 7px;
+    }
+
+    .item-name,
+    .item-type {
+        font-size: 18px;
+        position: relative;
+        top: 2px;
+    }
+
+    /* White
+     * ====================== */
+    template("white", "White", 29px, 34px);
+
+    /* Magic
+     * ====================== */
+    template("magic", "Magic", 29px, 34px);
+
+    /* Rare h54 w44
+     * ====================== */
+    template("rare", "Rare", 44px, 54px);
+
+    /* Unique
+     * ====================== */
+    template("unique", "Unique", 44px, 54px);
+
+    /* Currency
+     * ====================== */
+    template("currency", "Currency", 29px, 34px);
+
+    /* Gem
+     * ====================== */
+    template("gem", "Gem", 29px, 34px);
+
+    /* Experience Bar
+     * ====================== */
+    .exp-bar {
+        background: no-repeat;
+        position: relative;
+        background-image: url("../img/poe/ExperienceBar.png");
+        height: 13px;
+        width: 212px;
+    }
+
+    /* Styling
+     * ====================== */
+
+    .implicit-mod,
+    .explicit-mod {
+        color: #8888ff;
+        white-space: nowrap;
+    }
+
+    .flavor-text {
+        color: #af6025;
+        font-style: italic;
+        padding-left: 5px;
+        padding-right: 5px;
+        white-space: nowrap;
+    }
+
+    .item-text {
+        display: inline-block;
+        padding: 0 10px;
+        color: #777;
+    }
+
+    .font-italic { font-style: italic; }
+
+    .item-stats { padding-top: 3px; }
+    .item-effects { color: #a38d6d; }
+
+    .item-mirrored {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+
+    /* Colors
+     * ====================== */
+    .color-unique           { color: #af6025; }
+    .color-rare             { color: #f4f285; }
+    .color-white            { color: #c7c5c1; }
+    .color-gem              { color: #1ba29b; }
+
+    .color-default          { color: #fff; }
+    .color-augmented        { color: #88f; }
+    .color-unmet            { color: #d20000; }
+    .color-physical-dmg     { color: #fff; }
+    .color-fire-dmg         { color: #960000; }
+    .color-cold-dmg         { color: #366492; }
+    .color-lightning-dmg    { color: gold; }
+    .color-chaos-dmg        { color: #d02090; }
+}

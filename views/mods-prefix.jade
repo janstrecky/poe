@@ -1,0 +1,45 @@
+extends layout
+
+block content
+    div.container
+        h1= title
+        p Hello World!
+
+        hr
+
+        each mod, category in prefixes
+
+            h3= category
+            table.table.table-striped.table-bordered.table-hover.table-condensed
+                tr
+                    th Name
+                    th Level
+                    // th Type
+                    th Stat
+                    th Value
+
+                for o in mod
+                    tr
+                        td= o.name
+                        td= o.lvl
+                        // td= o.type
+                        if o.multiStat
+                            td
+                                | #{o.stat1}
+                                br
+                                | #{o.stat2}
+                        else
+                            td= o.stat
+
+                        if o.type == 1 || o.type == 3 || o.type == 4
+                            td
+                                | #{o.value1}
+                                br
+                                | #{o.value2}
+                        else if o.type == 2 || o.type == 5
+                            td= o.value
+                        else
+                            td= o.value
+
+
+

@@ -1,0 +1,53 @@
+@font-face{font-family:"Fontin SmallCaps";src:url("../font/fontin-smallcaps-webfont.eot");src:url("../font/fontin-smallcaps-webfont.eot?#iefix") format("embedded-opentype"),url("../font/fontin-smallcaps-webfont.woff") format("woff"),url("../font/fontin-smallcaps-webfont.ttf") format("truetype"),url("../font/fontin-smallcaps-webfont.svg#fontin_smallcapssmallcaps") format("svg");font-weight:normal;font-style:normal}
+.item{display:inline-block;}
+.item .item-container{font-family:"Fontin SmallCaps";position:absolute;display:none;text-align:center;margin-bottom:20px;font-size:70%;font-weight:normal}
+.item .item-content{text-align:center;color:#efefef;font-size:1.4em;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9sECAQUBd3UQ2UAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAAlxJREFUeNrt1DEBAAAIw7CBf2mIwgAOSCT0aCWZAC+1BGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGAAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGAAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAHBZNfoCzIySIwEAAAAASUVORK5CYII=");padding-left:11px;padding-right:11px;padding-bottom:7px}
+.item .item-name,.item .item-type{font-size:18px;position:relative;top:2px}
+.item .header-white{background:top left repeat-x;position:relative;background-image:url("../img/poe/ItemHeaderWhiteMiddle.png");height:34px;}
+.item .header-white .item-type{top:4px}
+.item .header-white .header-white-l{background:url("../img/poe/ItemHeaderWhiteLeft.png") no-repeat top left;height:34px;width:29px;left:-11px;position:absolute}
+.item .header-white .header-white-r{background-image:url("../img/poe/ItemHeaderWhiteRight.png");height:34px;width:29px;right:-11px;position:absolute}
+.item .separator-white{background:center no-repeat;position:relative;background-image:url("../img/poe/SeparatorWhite.png");height:8px;margin:1px 0}
+.item .header-magic{background:top left repeat-x;position:relative;background-image:url("../img/poe/ItemHeaderMagicMiddle.png");height:34px;}
+.item .header-magic .item-type{top:4px}
+.item .header-magic .header-magic-l{background:url("../img/poe/ItemHeaderMagicLeft.png") no-repeat top left;height:34px;width:29px;left:-11px;position:absolute}
+.item .header-magic .header-magic-r{background-image:url("../img/poe/ItemHeaderMagicRight.png");height:34px;width:29px;right:-11px;position:absolute}
+.item .separator-magic{background:center no-repeat;position:relative;background-image:url("../img/poe/SeparatorMagic.png");height:8px;margin:1px 0}
+.item .header-rare{background:top left repeat-x;position:relative;background-image:url("../img/poe/ItemHeaderRareMiddle.png");height:54px;}
+.item .header-rare .header-rare-l{background:url("../img/poe/ItemHeaderRareLeft.png") no-repeat top left;height:54px;width:44px;left:-11px;position:absolute}
+.item .header-rare .header-rare-r{background-image:url("../img/poe/ItemHeaderRareRight.png");height:54px;width:44px;right:-11px;position:absolute}
+.item .separator-rare{background:center no-repeat;position:relative;background-image:url("../img/poe/SeparatorRare.png");height:8px;margin:1px 0}
+.item .header-unique{background:top left repeat-x;position:relative;background-image:url("../img/poe/ItemHeaderUniqueMiddle.png");height:54px;}
+.item .header-unique .header-unique-l{background:url("../img/poe/ItemHeaderUniqueLeft.png") no-repeat top left;height:54px;width:44px;left:-11px;position:absolute}
+.item .header-unique .header-unique-r{background-image:url("../img/poe/ItemHeaderUniqueRight.png");height:54px;width:44px;right:-11px;position:absolute}
+.item .separator-unique{background:center no-repeat;position:relative;background-image:url("../img/poe/SeparatorUnique.png");height:8px;margin:1px 0}
+.item .header-currency{background:top left repeat-x;position:relative;background-image:url("../img/poe/ItemHeaderCurrencyMiddle.png");height:34px;}
+.item .header-currency .item-type{top:4px}
+.item .header-currency .header-currency-l{background:url("../img/poe/ItemHeaderCurrencyLeft.png") no-repeat top left;height:34px;width:29px;left:-11px;position:absolute}
+.item .header-currency .header-currency-r{background-image:url("../img/poe/ItemHeaderCurrencyRight.png");height:34px;width:29px;right:-11px;position:absolute}
+.item .separator-currency{background:center no-repeat;position:relative;background-image:url("../img/poe/SeparatorCurrency.png");height:8px;margin:1px 0}
+.item .header-gem{background:top left repeat-x;position:relative;background-image:url("../img/poe/ItemHeaderGemMiddle.png");height:34px;}
+.item .header-gem .item-type{top:4px}
+.item .header-gem .header-gem-l{background:url("../img/poe/ItemHeaderGemLeft.png") no-repeat top left;height:34px;width:29px;left:-11px;position:absolute}
+.item .header-gem .header-gem-r{background-image:url("../img/poe/ItemHeaderGemRight.png");height:34px;width:29px;right:-11px;position:absolute}
+.item .separator-gem{background:center no-repeat;position:relative;background-image:url("../img/poe/SeparatorGem.png");height:8px;margin:1px 0}
+.item .exp-bar{background:no-repeat;position:relative;background-image:url("../img/poe/ExperienceBar.png");height:13px;width:212px}
+.item .implicit-mod,.item .explicit-mod{color:#88f;white-space:nowrap}
+.item .flavor-text{color:#af6025;font-style:italic;padding-left:5px;padding-right:5px;white-space:nowrap}
+.item .item-text{display:inline-block;padding:0 10px;color:#777}
+.item .font-italic{font-style:italic}
+.item .item-stats{padding-top:3px}
+.item .item-effects{color:#a38d6d}
+.item .item-mirrored{-moz-transform:scaleX(-1);-o-transform:scaleX(-1);-webkit-transform:scaleX(-1);transform:scaleX(-1);filter:FlipH;-ms-filter:"FlipH"}
+.item .color-unique{color:#af6025}
+.item .color-rare{color:#f4f285}
+.item .color-white{color:#c7c5c1}
+.item .color-gem{color:#1ba29b}
+.item .color-default{color:#fff}
+.item .color-augmented{color:#88f}
+.item .color-unmet{color:#d20000}
+.item .color-physical-dmg{color:#fff}
+.item .color-fire-dmg{color:#960000}
+.item .color-cold-dmg{color:#366492}
+.item .color-lightning-dmg{color:#ffd700}
+.item .color-chaos-dmg{color:#d02090}

@@ -1,0 +1,21 @@
+{
+  "name": "poe-item",
+  "version": "0.0.1",
+  "private": true,
+  "main": "app.js",
+  "dependencies": {
+    "express": "~3.3.4",
+    "jade": "latest",
+    "less-middleware": "latest",
+    "colors": "latest",
+    "stylus": "latest",
+    "logule": "~2.0.0",
+    "request": "~2.26.0",
+    "jquery": "~1.8.3",
+    "underscore": "~1.5.1",
+    "mocha": "~1.12.0",
+    "glob": "~3.2.6",
+    "async": "~0.2.9",
+    "socket.io": "~0.9.16"
+  }
+}

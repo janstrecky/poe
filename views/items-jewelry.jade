@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    div.container
+        h1= title
+        p Hello World!
+
+        hr
+
+        h3 Jewelry
+        table.table.table-striped.table-bordered.table-hover
+            tr
+                th Name
+                th Level
+                th Implicit Mods
+                th Mod Values
+
+            for o in jewelry
+                tr
+                    td= o.name
+                    td= o.lvl
+                    td= o.impMods
+                    td= o.modValues

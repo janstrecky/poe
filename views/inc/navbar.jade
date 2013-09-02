@@ -1,0 +1,50 @@
+div.navbar.navbar-fixed-top.navbar-default
+        div.container
+            div.navbar-header
+                button.navbar-toggle(type="button", data-toggle="collapse", data-target=".nav-collapse")
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href="/") #{appName} &mdash;&nbsp;
+                    i.muted
+                        | beta
+            div.navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    li#navbar-index
+                        a(href="/") Home
+                    li#navbar-about
+                        a(href="/about") About
+                    li.nav-divider
+                    li.dropdown
+                        a.dropdown-toggle(href="#", data-toggle="dropdown")
+                            | Mods&nbsp;
+                            b.caret
+                        ul.dropdown-menu
+                            li#navbar-modsprefix
+                                a(href="/mods/prefix") Prefixes
+                            li#navbar-modssuffix
+                                a(href="/mods/suffix") Suffixes
+                    li.dropdown
+                        a.dropdown-toggle(href="#", data-toggle="dropdown")
+                            | Items&nbsp;
+                            b.caret
+                        ul.dropdown-menu
+                            li#navbar-itemsweapon
+                                a(href="/items/weapon") Weapons
+                            li#navbar-itemsarmour
+                                a(href="/items/armour") Armour
+                            li#navbar-itemsjewelry
+                                a(href="/items/jewelry") Jewelry
+
+                ul#theme-nav.nav.navbar-nav.navbar-right
+                    li.dropdown
+                        a.dropdown-toggle(href="#", data-toggle="dropdown")
+                            | Theme&nbsp;
+                            b.caret
+
+                        ul.dropdown-menu
+                            li.dropdown-header Not all look good
+                            for th in themes
+                                li
+                                    a(href="#")= th
+

@@ -1,0 +1,21 @@
+doctype 5
+html
+    head
+        block head
+            block title
+                title #{appName} | #{title}
+            block meta
+                meta(name="description", content="")
+                meta(name="keywords",    content="")
+            include inc/header
+
+    body
+        include inc/navbar
+
+        block content
+
+        include inc/footer
+        include inc/scripts
+        include inc/mixins
+
+        block scripts

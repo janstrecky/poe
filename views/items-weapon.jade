@@ -1,0 +1,50 @@
+extends layout
+
+block content
+    div.container
+        h1= title
+        p Hello World!
+
+        div.alert.alert-info
+            b TODO:&nbsp;
+            br
+            | &raquo; Implement implicit mods and values
+            br
+            | &raquo; Implement min and max damage values
+
+        hr
+
+        each item, type in weapons
+            h3= type
+
+            table.table.table-striped.table-bordered.table-hover.table-condensed
+                tr
+                    th Name
+                    th Level
+                    th Damage
+                    th APS
+                    th DPS
+                    th Req Str
+                    th Req Dex
+                    th Req Int
+
+                for o in item
+                    tr
+                        td#item-name(data-type=type)
+                            img.pull-left.small-img(src=o.smallImg)
+                            a.ez(href="#")= o.name
+                                span.ez
+                                    img(src=o.largeImg)
+                        td= o.lvl
+                        td= o.damage
+                        td= o.speed
+                        td= o.dps
+                        td= o.reqStr
+                        td= o.reqDex
+                        td= o.reqInt
+
+block scripts
+    script.
+        $(document).on("click", "#item-name", function(e) {
+            e.preventDefault();
+        });

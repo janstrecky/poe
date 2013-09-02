@@ -1,0 +1,159 @@
+<script id="template" type="text/x-handlebars-template">
+<div class="item">
+    {{#if mirrored}}
+        <img class="item-mirrored" src="{{img}}" alt="Item Img">
+    {{else}}
+        <img src="{{img}}" alt="Item Img">
+    {{/if}}
+
+    <div class="item-container">
+        <div class="item-content">
+
+            <div class="header-{{rarity}}">
+                <div class="header-{{rarity}}-l"></div>
+                <div class="header-{{rarity}}-r"></div>
+                {{#if item_name}}
+                <div class="color-{{rarity}}">
+                    <span class="item-name">{{item_name}}</span>
+                </div>
+                {{/if}}
+                <div class="color-{{rarity}}">
+                    <span class="item-type">{{item_type}}</span>
+                </div>
+            </div>
+
+            <div class="item-stats">
+                <span class="item-text">
+                    {{#if weapon_type}}
+                    <span class="item-text">{{weapon_type}}</span><br>
+                    {{/if}}
+
+                    {{#if gem_category}}
+                    <span class="item-text">{{gem_category}}</span><br>
+                    {{/if}}
+
+                    {{#if gem_level}}
+                    Level: <span class="color-default">{{gem_level}}{{equal gem_level "20" " (Max)"}}</span><br>
+                    {{/if}}
+
+                    {{#if gem_cost}}
+                    Mana Cost: <span class="color-default">{{gem_cost}}</span><br>
+                    {{/if}}
+
+                    {{#if quality}}
+                    Quality: <span class="color-augmented">+{{quality}}%</span><br>
+                    {{/if}}
+
+                    {{#if block_chance}}
+                    Chance to Block: <span class="color-{{tern block_chance_aug "augmented" "default"}}">{{block_chance}}%</span><br>
+                    {{/if}}
+
+                    {{#if armour}}
+                    Armour: <span class="color-{{tern armour_aug "augmented" "default"}}">{{armour}}</span><br>
+                    {{/if}}
+
+                    {{#if evasion}}
+                    Evasion Rating: <span class="color-{{tern evasion_aug "augmented" "default"}}">{{evasion}}</span><br>
+                    {{/if}}
+
+                    {{#if energy_shield}}
+                    Energy Shield: <span class="color-{{tern energy_shield_aug "augmented" "default"}}">{{energy_shield}}</span><br>
+                    {{/if}}
+                </span>
+            </div>
+
+            <div class="separator-{{rarity}}"></div>
+
+            <div class="requirements">
+                <span class="item-text">
+                    Requires Level <span class="color-{{tern req.level_aug "augmented" "default"}}">{{req.level}}</span>
+
+                    {{#if req.str}}
+                    , <span class="color-{{tern req.str_aug "augmented" "default"}}">{{req.str}}</span> Str
+                    {{/if}}
+
+                    {{#if req.dex}}
+                    , <span class="color-{{tern req.dex_aug "augmented" "default"}}">{{req.dex}}</span> Dex
+                    {{/if}}
+
+                    {{#if req.int}}
+                    , <span class="color-{{tern req.int_aug "augmented" "default"}}">{{req.int}}</span> Int
+                    {{/if}}
+                </span>
+            </div>
+
+            {{#if gem_desc}}
+                <div class="separator-{{rarity}}"></div>
+
+                <span class="color-gem">{{gem_desc}}</span>
+            {{/if}}
+
+            {{#if implicit_mod}}
+                <div class="separator-{{rarity}}"></div>
+
+                <div class="explicit-mod">
+                    <span>{{implicit_mod}}</span>
+                </div>
+            {{/if}}
+
+            {{#if mods}}
+                <div class="separator-{{rarity}}"></div>
+
+                <div class="explicit-mod">
+                    {{#each mods}}
+                        <span>{{this}}</span><br>
+                    {{/each}}
+                </div>
+            {{/if}}
+
+            {{!--
+            {{#eq rarity "gem"}}
+                <div class="separator-{{rarity}}"></div>
+
+                <div class="exp-bar"></div> <span class="color-default">1277757084/146782704</span>
+            {{/eq}}
+            --}}
+
+            {{#eq rarity "gem"}}
+                <div class="separator-{{rarity}}"></div>
+
+                {{#if gem_support}}
+                    <div>
+                        <span class="item-text font-italic">This is a Support Gem. It does nto grant a bonus to<br>your character, but to skills in sockets connected to<br>it. Place into an item socket connected to a socket<br>containing the active Skill Gem you wish to augment.<br>Right click to remove from a socket.</span>
+                    </div>
+                {{else}}
+                    <div>
+                        <span class="item-text font-italic">Place into an item socket of the right colour to gain<br>this skill. Right click to remove from a socket.</span>
+                    </div>
+                {{/if}}
+            {{/eq}}
+
+            {{#if effects}}
+                <div class="separator-{{rarity}}"></div>
+
+                <div class="item-effects">
+                    {{#each effects}}
+                        <span>{{this}}</span><br>
+                    {{/each}}
+                </div>
+            {{/if}}
+
+            {{#if mirrored}}
+                <div class="separator-{{rarity}}"></div>
+
+                <div class="color-augmented">
+                    <span>Mirrored</span>
+                </div>
+            {{/if}}
+
+            {{#if flavor_text}}
+                <div class="separator-{{rarity}}"></div>
+
+                <div class="flavor-text">
+                    <span>{{flavor_text}}</span>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
+</script>
