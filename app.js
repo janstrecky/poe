@@ -46,7 +46,7 @@ app.configure(function() {
         var app_theme = req.cookies.app_theme || "cosmo";
         res.locals.app_theme = app_theme;
 
-        next();
+        return next();
     });
 
     app.locals = conf.locals;
@@ -91,6 +91,7 @@ app.get("/items/armour", routes.items_armour);
 app.get("/items/armor", routes.items_armour); // use redirect?
 
 app.get("/items/jewelry", routes.items_jewelry);
+
 
 
 
