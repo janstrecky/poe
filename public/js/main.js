@@ -97,164 +97,164 @@ Handlebars.registerHelper("equal", function(val1, val2, ret, options) {
 
 });*/
 
-var template="";
-template += "<div class=\"item\">";
-template += "    {{#if mirrored}}";
-template += "        <img class=\"item-mirrored\" src=\"{{img}}\" alt=\"Item Img\">";
-template += "    {{else}}";
-template += "        <img src=\"{{img}}\" alt=\"Item Img\">";
-template += "    {{\/if}}";
-template += "";
-template += "    <div class=\"item-container\">";
-template += "        <div class=\"item-content\">";
-template += "";
-template += "            <div class=\"header-{{rarity}}\">";
-template += "                <div class=\"header-{{rarity}}-l\"><\/div>";
-template += "                <div class=\"header-{{rarity}}-r\"><\/div>";
-template += "                {{#if item_name}}";
-template += "                <div class=\"color-{{rarity}}\">";
-template += "                    <span class=\"item-name\">{{item_name}}<\/span>";
-template += "                <\/div>";
-template += "                {{\/if}}";
-template += "                <div class=\"color-{{rarity}}\">";
-template += "                    <span class=\"item-type\">{{item_type}}<\/span>";
-template += "                <\/div>";
-template += "            <\/div>";
-template += "";
-template += "            <div class=\"item-stats\">";
-template += "                <span class=\"item-text\">";
-template += "                    {{#if weapon_type}}";
-template += "                    <span class=\"item-text\">{{weapon_type}}<\/span><br>";
-template += "                    {{\/if}}";
-template += "";
-template += "                    {{#if gem_category}}";
-template += "                    <span class=\"item-text\">{{gem_category}}<\/span><br>";
-template += "                    {{\/if}}";
-template += "";
-template += "                    {{#if gem_level}}";
-template += "                    Level: <span class=\"color-default\">{{gem_level}}{{equal gem_level \"20\" \" (Max)\"}}<\/span><br>";
-template += "                    {{\/if}}";
-template += "";
-template += "                    {{#if gem_cost}}";
-template += "                    Mana Cost: <span class=\"color-default\">{{gem_cost}}<\/span><br>";
-template += "                    {{\/if}}";
-template += "";
-template += "                    {{#if quality}}";
-template += "                    Quality: <span class=\"color-augmented\">+{{quality}}%<\/span><br>";
-template += "                    {{\/if}}";
-template += "";
-template += "                    {{#if block_chance}}";
-template += "                    Chance to Block: <span class=\"color-{{tern block_chance_aug \"augmented\" \"default\"}}\">{{block_chance}}%<\/span><br>";
-template += "                    {{\/if}}";
-template += "";
-template += "                    {{#if armour}}";
-template += "                    Armour: <span class=\"color-{{tern armour_aug \"augmented\" \"default\"}}\">{{armour}}<\/span><br>";
-template += "                    {{\/if}}";
-template += "";
-template += "                    {{#if evasion}}";
-template += "                    Evasion Rating: <span class=\"color-{{tern evasion_aug \"augmented\" \"default\"}}\">{{evasion}}<\/span><br>";
-template += "                    {{\/if}}";
-template += "";
-template += "                    {{#if energy_shield}}";
-template += "                    Energy Shield: <span class=\"color-{{tern energy_shield_aug \"augmented\" \"default\"}}\">{{energy_shield}}<\/span><br>";
-template += "                    {{\/if}}";
-template += "                <\/span>";
-template += "            <\/div>";
-template += "";
-template += "            <div class=\"separator-{{rarity}}\"><\/div>";
-template += "";
-template += "            <div class=\"requirements\">";
-template += "                <span class=\"item-text\">";
-template += "                    Requires Level <span class=\"color-{{tern req.level_aug \"augmented\" \"default\"}}\">{{req.level}}<\/span>";
-template += "";
-template += "                    {{#if req.str}}";
-template += "                    , <span class=\"color-{{tern req.str_aug \"augmented\" \"default\"}}\">{{req.str}}<\/span> Str";
-template += "                    {{\/if}}";
-template += "";
-template += "                    {{#if req.dex}}";
-template += "                    , <span class=\"color-{{tern req.dex_aug \"augmented\" \"default\"}}\">{{req.dex}}<\/span> Dex";
-template += "                    {{\/if}}";
-template += "";
-template += "                    {{#if req.int}}";
-template += "                    , <span class=\"color-{{tern req.int_aug \"augmented\" \"default\"}}\">{{req.int}}<\/span> Int";
-template += "                    {{\/if}}";
-template += "                <\/span>";
-template += "            <\/div>";
-template += "";
-template += "            {{#if gem_desc}}";
-template += "                <div class=\"separator-{{rarity}}\"><\/div>";
-template += "";
-template += "                <span class=\"color-gem\">{{gem_desc}}<\/span>";
-template += "            {{\/if}}";
-template += "";
-template += "            {{#if implicit_mod}}";
-template += "                <div class=\"separator-{{rarity}}\"><\/div>";
-template += "";
-template += "                <div class=\"explicit-mod\">";
-template += "                    <span>{{implicit_mod}}<\/span>";
-template += "                <\/div>";
-template += "            {{\/if}}";
-template += "";
-template += "            {{#if mods}}";
-template += "                <div class=\"separator-{{rarity}}\"><\/div>";
-template += "";
-template += "                <div class=\"explicit-mod\">";
-template += "                    {{#each mods}}";
-template += "                        <span>{{this}}<\/span><br>";
-template += "                    {{\/each}}";
-template += "                <\/div>";
-template += "            {{\/if}}";
-template += "";
-template += "            {{!--";
-template += "            {{#eq rarity \"gem\"}}";
-template += "                <div class=\"separator-{{rarity}}\"><\/div>";
-template += "";
-template += "                <div class=\"exp-bar\"><\/div> <span class=\"color-default\">1277757084\/146782704<\/span>";
-template += "            {{\/eq}}";
-template += "            --}}";
-template += "";
-template += "            {{#eq rarity \"gem\"}}";
-template += "                <div class=\"separator-{{rarity}}\"><\/div>";
-template += "";
-template += "                {{#if gem_support}}";
-template += "                    <div>";
-template += "                        <span class=\"item-text font-italic\">This is a Support Gem. It does nto grant a bonus to<br>your character, but to skills in sockets connected to<br>it. Place into an item socket connected to a socket<br>containing the active Skill Gem you wish to augment.<br>Right click to remove from a socket.<\/span>";
-template += "                    <\/div>";
-template += "                {{else}}";
-template += "                    <div>";
-template += "                        <span class=\"item-text font-italic\">Place into an item socket of the right colour to gain<br>this skill. Right click to remove from a socket.<\/span>";
-template += "                    <\/div>";
-template += "                {{\/if}}";
-template += "            {{\/eq}}";
-template += "";
-template += "            {{#if effects}}";
-template += "                <div class=\"separator-{{rarity}}\"><\/div>";
-template += "";
-template += "                <div class=\"item-effects\">";
-template += "                    {{#each effects}}";
-template += "                        <span>{{this}}<\/span><br>";
-template += "                    {{\/each}}";
-template += "                <\/div>";
-template += "            {{\/if}}";
-template += "";
-template += "            {{#if mirrored}}";
-template += "                <div class=\"separator-{{rarity}}\"><\/div>";
-template += "";
-template += "                <div class=\"color-augmented\">";
-template += "                    <span>Mirrored<\/span>";
-template += "                <\/div>";
-template += "            {{\/if}}";
-template += "";
-template += "            {{#if flavor_text}}";
-template += "                <div class=\"separator-{{rarity}}\"><\/div>";
-template += "";
-template += "                <div class=\"flavor-text\">";
-template += "                    <span>{{flavor_text}}<\/span>";
-template += "                <\/div>";
-template += "            {{\/if}}";
-template += "        <\/div>";
-template += "    <\/div>";
-template += "<\/div>";
+var template="" +
+"<div class=\"item\">" +
+"    {{#if mirrored}}" +
+"        <img class=\"item-mirrored\" src=\"{{img}}\" alt=\"Item Img\">" +
+"    {{else}}" +
+"        <img src=\"{{img}}\" alt=\"Item Img\">" +
+"    {{/if}}" +
+"" +
+"    <div class=\"item-container\">" +
+"        <div class=\"item-content\">" +
+"" +
+"            <div class=\"header-{{rarity}}\">" +
+"                <div class=\"header-{{rarity}}-l\"></div>" +
+"                <div class=\"header-{{rarity}}-r\"></div>" +
+"                {{#if item_name}}" +
+"                <div class=\"color-{{rarity}}\">" +
+"                    <span class=\"item-name\">{{item_name}}</span>" +
+"                </div>" +
+"                {{/if}}" +
+"                <div class=\"color-{{rarity}}\">" +
+"                    <span class=\"item-type\">{{item_type}}</span>" +
+"                </div>" +
+"            </div>" +
+"" +
+"            <div class=\"item-stats\">" +
+"                <span class=\"item-text\">" +
+"                    {{#if weapon_type}}" +
+"                    <span class=\"item-text\">{{weapon_type}}</span><br>" +
+"                    {{/if}}" +
+"" +
+"                    {{#if gem_category}}" +
+"                    <span class=\"item-text\">{{gem_category}}</span><br>" +
+"                    {{/if}}" +
+"" +
+"                    {{#if gem_level}}" +
+"                    Level: <span class=\"color-default\">{{gem_level}}{{equal gem_level \"20\" \" (Max)\"}}</span><br>" +
+"                    {{/if}}" +
+"" +
+"                    {{#if gem_cost}}" +
+"                    Mana Cost: <span class=\"color-default\">{{gem_cost}}</span><br>" +
+"                    {{/if}}" +
+"" +
+"                    {{#if quality}}" +
+"                    Quality: <span class=\"color-augmented\">+{{quality}}%</span><br>" +
+"                    {{/if}}" +
+"" +
+"                    {{#if block_chance}}" +
+"                    Chance to Block: <span class=\"color-{{tern block_chance_aug \"augmented\" \"default\"}}\">{{block_chance}}%</span><br>" +
+"                    {{/if}}" +
+"" +
+"                    {{#if armour}}" +
+"                    Armour: <span class=\"color-{{tern armour_aug \"augmented\" \"default\"}}\">{{armour}}</span><br>" +
+"                    {{/if}}" +
+"" +
+"                    {{#if evasion}}" +
+"                    Evasion Rating: <span class=\"color-{{tern evasion_aug \"augmented\" \"default\"}}\">{{evasion}}</span><br>" +
+"                    {{/if}}" +
+"" +
+"                    {{#if energy_shield}}" +
+"                    Energy Shield: <span class=\"color-{{tern energy_shield_aug \"augmented\" \"default\"}}\">{{energy_shield}}</span><br>" +
+"                    {{/if}}" +
+"                </span>" +
+"            </div>" +
+"" +
+"            <div class=\"separator-{{rarity}}\"></div>" +
+"" +
+"            <div class=\"requirements\">" +
+"                <span class=\"item-text\">" +
+"                    Requires Level <span class=\"color-{{tern req.level_aug \"augmented\" \"default\"}}\">{{req.level}}</span>" +
+"" +
+"                    {{#if req.str}}" +
+"                    , <span class=\"color-{{tern req.str_aug \"augmented\" \"default\"}}\">{{req.str}}</span> Str" +
+"                    {{/if}}" +
+"" +
+"                    {{#if req.dex}}" +
+"                    , <span class=\"color-{{tern req.dex_aug \"augmented\" \"default\"}}\">{{req.dex}}</span> Dex" +
+"                    {{/if}}" +
+"" +
+"                    {{#if req.int}}" +
+"                    , <span class=\"color-{{tern req.int_aug \"augmented\" \"default\"}}\">{{req.int}}</span> Int" +
+"                    {{/if}}" +
+"                </span>" +
+"            </div>" +
+"" +
+"            {{#if gem_desc}}" +
+"                <div class=\"separator-{{rarity}}\"></div>" +
+"" +
+"                <span class=\"color-gem\">{{gem_desc}}</span>" +
+"            {{/if}}" +
+"" +
+"            {{#if implicit_mod}}" +
+"                <div class=\"separator-{{rarity}}\"></div>" +
+"" +
+"                <div class=\"explicit-mod\">" +
+"                    <span>{{implicit_mod}}</span>" +
+"                </div>" +
+"            {{/if}}" +
+"" +
+"            {{#if mods}}" +
+"                <div class=\"separator-{{rarity}}\"></div>" +
+"" +
+"                <div class=\"explicit-mod\">" +
+"                    {{#each mods}}" +
+"                        <span>{{this}}</span><br>" +
+"                    {{/each}}" +
+"                </div>" +
+"            {{/if}}" +
+"" +
+"            {{!--" +
+"            {{#eq rarity \"gem\"}}" +
+"                <div class=\"separator-{{rarity}}\"></div>" +
+"" +
+"                <div class=\"exp-bar\"></div> <span class=\"color-default\">1277757084/146782704</span>" +
+"            {{/eq}}" +
+"            --}}" +
+"" +
+"            {{#eq rarity \"gem\"}}" +
+"                <div class=\"separator-{{rarity}}\"></div>" +
+"" +
+"                {{#if gem_support}}" +
+"                    <div>" +
+"                        <span class=\"item-text font-italic\">This is a Support Gem. It does nto grant a bonus to<br>your character, but to skills in sockets connected to<br>it. Place into an item socket connected to a socket<br>containing the active Skill Gem you wish to augment.<br>Right click to remove from a socket.</span>" +
+"                    </div>" +
+"                {{else}}" +
+"                    <div>" +
+"                        <span class=\"item-text font-italic\">Place into an item socket of the right colour to gain<br>this skill. Right click to remove from a socket.</span>" +
+"                    </div>" +
+"                {{/if}}" +
+"            {{/eq}}" +
+"" +
+"            {{#if effects}}" +
+"                <div class=\"separator-{{rarity}}\"></div>" +
+"" +
+"                <div class=\"item-effects\">" +
+"                    {{#each effects}}" +
+"                        <span>{{this}}</span><br>" +
+"                    {{/each}}" +
+"                </div>" +
+"            {{/if}}" +
+"" +
+"            {{#if mirrored}}" +
+"                <div class=\"separator-{{rarity}}\"></div>" +
+"" +
+"                <div class=\"color-augmented\">" +
+"                    <span>Mirrored</span>" +
+"                </div>" +
+"            {{/if}}" +
+"" +
+"            {{#if flavor_text}}" +
+"                <div class=\"separator-{{rarity}}\"></div>" +
+"" +
+"                <div class=\"flavor-text\">" +
+"                    <span>{{flavor_text}}</span>" +
+"                </div>" +
+"            {{/if}}" +
+"        </div>" +
+"    </div>" +
+"</div>";
 
 var templateFn = Handlebars.compile(template);
 

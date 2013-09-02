@@ -3,6 +3,9 @@
     - Use CDN for bootstrap/bootswatch (done)
     - Add fixed headers to mod/item tables
     - Create a variable for the item template instead of Ajax get (done)
+
+   Notes:
+    - (100+percentIncrease) % of (base+plusIncrease) + 20%
  * ====================== */
 var express     = require("express"),
     http        = require("http"),
