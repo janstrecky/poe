@@ -1,3 +1,5 @@
+/* jshint eqeqeq: false */
+/* ignore === warning in handlebars helpers */
 
 $(document)
 .on("mouseover", ".item", function(e) {
@@ -135,7 +137,7 @@ function ready(templateFn) {
             str: 99,
             int: 115
         }
-    }
+    };
 
     var gem = {
         rarity: "gem",
@@ -156,7 +158,7 @@ function ready(templateFn) {
             "Deals 70% of Base Damage",
             "10% increased Attack Speed"
         ]
-    }
+    };
 
     var shav = {
         img: "http://webcdn.pathofexile.com/image/Art/2DItems/Armours/BodyArmours/BodyInt1CUnique.png?scale=1",
@@ -183,7 +185,8 @@ function ready(templateFn) {
         ],
 
         flavor_text: "Shavronne's apparel became ever more extravagant<br>as her body and soul became ever more corrupted."
-    }
+    };
+
     var item1 = createItem(armour);
     var item2 = createItem(gem);
     var item3 = createItem(shav);
