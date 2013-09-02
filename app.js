@@ -26,7 +26,7 @@ app.configure(function() {
     app.set("views", __dirname + "/views");
     app.set("view engine", "jade");
 
-    app.set("view options", { layout: false });
+    // app.set("view options", { layout: false }); REMOVE
     // app.use(express.logger("dev")); // comment if too much spam
 
     app.use(express.bodyParser());
