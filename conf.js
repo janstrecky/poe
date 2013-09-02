@@ -2,13 +2,12 @@ module.exports = {
     PORT: process.env.PORT || 1234,
     IP  : process.env.IP,
 
-    mongo_url: "mongodb://localhost/users",
     session_secret: "3sekrt5yu",
 
     // app.locals
     locals: {
         appName: "PoEItem",
-        theme: "cosmo",
+        theme: "cyborg",
         author: "Morten Lindhardt",
         authorLink: "http://github.com/r3Fuze",
         themes: [
