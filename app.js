@@ -1,6 +1,6 @@
 /* Dependencies
    TODO:
-    - Use CDN for bootstrap/bootswatch?!?!?
+    - Use CDN for bootstrap/bootswatch (done)
     - Create a variable for the item template instead of Ajax get
  * ====================== */
 var express     = require("express"),
