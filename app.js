@@ -59,12 +59,16 @@ app.configure(function() {
     app.locals.suffixes = mods.suffixes;
     app.locals.weapons = items.weapons;
     app.locals.armour = items.armour;
+    app.locals.jewelry = items.jewelry;
+    app.locals.currency = items.currency;
 
     app.locals.all = {
         prefixes: mods.prefixes,
         suffixes: mods.suffixes,
         weapons:  items.weapons,
-        armour:   items.armour
+        armour:   items.armour,
+        jewelry:  items.jewelry,
+        currency: items.currency
     };
 
     app.use(app.router);
@@ -94,6 +98,7 @@ app.get("/items/armour", routes.items_armour);
 app.get("/items/armor", routes.items_armour); // use redirect?
 
 app.get("/items/jewelry", routes.items_jewelry);
+app.get("/items/currency", routes.items_currency);
 
 
 

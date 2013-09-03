@@ -3,6 +3,7 @@
 .item .item-container{font-family:"Fontin SmallCaps";position:absolute;display:none;text-align:center;margin-bottom:20px;font-size:70%;font-weight:normal}
 .item .item-content{text-align:center;color:#efefef;font-size:1.4em;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9sECAQUBd3UQ2UAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAAlxJREFUeNrt1DEBAAAIw7CBf2mIwgAOSCT0aCWZAC+1BGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGAAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAYACAAQAGABgAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGABgAIABAAYAGAAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAGAAgAEABgAYAHBZNfoCzIySIwEAAAAASUVORK5CYII=");padding-left:11px;padding-right:11px;padding-bottom:7px}
 .item .item-name,.item .item-type{font-size:18px;position:relative;top:2px}
+.item .item-name{top:3px}
 .item .header-white{background:top left repeat-x;position:relative;background-image:url("../img/poe/ItemHeaderWhiteMiddle.png");height:34px;}
 .item .header-white .item-type{top:4px}
 .item .header-white .header-white-l{background:url("../img/poe/ItemHeaderWhiteLeft.png") no-repeat top left;height:34px;width:29px;left:-11px;position:absolute}
@@ -43,6 +44,7 @@
 .item .color-rare{color:#f4f285}
 .item .color-white{color:#c7c5c1}
 .item .color-gem{color:#1ba29b}
+.item .color-currency{color:#a38d6d}
 .item .color-default{color:#fff}
 .item .color-augmented{color:#88f}
 .item .color-unmet{color:#d20000}

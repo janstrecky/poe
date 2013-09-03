@@ -92,6 +92,15 @@ Handlebars.registerHelper("equal", function(val1, val2, ret, options) {
     return (val1 == val2) ? ret : "";
 });
 
+Handlebars.registerHelper("in_if", function(conditional, ret, val) {
+    return (conditional) ? ret + (val === undefined ? "" : val): "";
+});
+
+/*Handlebars.registerHelper("in_if", function(options) {
+    console.log(options);
+    return "";
+});*/
+
 /*$.get("js/templates.html", function(o) {
     var template = $(o).filter("#template").html();
 
@@ -99,11 +108,7 @@ Handlebars.registerHelper("equal", function(val1, val2, ret, options) {
 
 var template="" +
 "<div class=\"item\">" +
-"    {{#if mirrored}}" +
-"        <img class=\"item-mirrored\" src=\"{{img}}\" alt=\"Item Img\">" +
-"    {{else}}" +
-"        <img src=\"{{img}}\" alt=\"Item Img\">" +
-"    {{/if}}" +
+"    <img class=\"{{in_if mirrored \"item-mirrored\"}}\" src=\"{{img}}{{in_if stackSize \"&stackSize=\" stackSize}}\" alt=\"Item Img\">" +
 "" +
 "    <div class=\"item-container\">" +
 "        <div class=\"item-content\">" +
@@ -124,62 +129,74 @@ var template="" +
 "            <div class=\"item-stats\">" +
 "                <span class=\"item-text\">" +
 "                    {{#if weapon_type}}" +
-"                    <span class=\"item-text\">{{weapon_type}}</span><br>" +
+"                        <span class=\"item-text\">{{weapon_type}}</span><br>" +
 "                    {{/if}}" +
 "" +
 "                    {{#if gem_category}}" +
-"                    <span class=\"item-text\">{{gem_category}}</span><br>" +
+"                        <span class=\"item-text\">{{gem_category}}</span><br>" +
+"                    {{/if}}" +
+"" +
+"                    {{#if stackSize}}" +
+"                        Stack Size: <span class=\"color-default\">{{stackSize}}/{{maxStackSize}}</span>" +
 "                    {{/if}}" +
 "" +
 "                    {{#if gem_level}}" +
-"                    Level: <span class=\"color-default\">{{gem_level}}{{equal gem_level \"20\" \" (Max)\"}}</span><br>" +
+"                        Level: <span class=\"color-default\">{{gem_level}}{{equal gem_level \"20\" \" (Max)\"}}</span><br>" +
 "                    {{/if}}" +
 "" +
 "                    {{#if gem_cost}}" +
-"                    Mana Cost: <span class=\"color-default\">{{gem_cost}}</span><br>" +
+"                        Mana Cost: <span class=\"color-default\">{{gem_cost}}</span><br>" +
 "                    {{/if}}" +
 "" +
 "                    {{#if quality}}" +
-"                    Quality: <span class=\"color-augmented\">+{{quality}}%</span><br>" +
+"                        Quality: <span class=\"color-augmented\">+{{quality}}%</span><br>" +
 "                    {{/if}}" +
 "" +
 "                    {{#if block_chance}}" +
-"                    Chance to Block: <span class=\"color-{{tern block_chance_aug \"augmented\" \"default\"}}\">{{block_chance}}%</span><br>" +
+"                        Chance to Block: <span class=\"color-{{tern block_chance_aug \"augmented\" \"default\"}}\">{{block_chance}}%</span><br>" +
 "                    {{/if}}" +
 "" +
 "                    {{#if armour}}" +
-"                    Armour: <span class=\"color-{{tern armour_aug \"augmented\" \"default\"}}\">{{armour}}</span><br>" +
+"                        Armour: <span class=\"color-{{tern armour_aug \"augmented\" \"default\"}}\">{{armour}}</span><br>" +
 "                    {{/if}}" +
 "" +
 "                    {{#if evasion}}" +
-"                    Evasion Rating: <span class=\"color-{{tern evasion_aug \"augmented\" \"default\"}}\">{{evasion}}</span><br>" +
+"                        Evasion Rating: <span class=\"color-{{tern evasion_aug \"augmented\" \"default\"}}\">{{evasion}}</span><br>" +
 "                    {{/if}}" +
 "" +
 "                    {{#if energy_shield}}" +
-"                    Energy Shield: <span class=\"color-{{tern energy_shield_aug \"augmented\" \"default\"}}\">{{energy_shield}}</span><br>" +
+"                        Energy Shield: <span class=\"color-{{tern energy_shield_aug \"augmented\" \"default\"}}\">{{energy_shield}}</span><br>" +
 "                    {{/if}}" +
 "                </span>" +
 "            </div>" +
 "" +
-"            <div class=\"separator-{{rarity}}\"></div>" +
+"            " +
 "" +
-"            <div class=\"requirements\">" +
-"                <span class=\"item-text\">" +
-"                    Requires Level <span class=\"color-{{tern req.level_aug \"augmented\" \"default\"}}\">{{req.level}}</span>" +
 "" +
-"                    {{#if req.str}}" +
-"                    , <span class=\"color-{{tern req.str_aug \"augmented\" \"default\"}}\">{{req.str}}</span> Str" +
-"                    {{/if}}" +
+"            {{#if req}}" +
+"                <div class=\"separator-{{rarity}}\"></div>" +
 "" +
-"                    {{#if req.dex}}" +
-"                    , <span class=\"color-{{tern req.dex_aug \"augmented\" \"default\"}}\">{{req.dex}}</span> Dex" +
-"                    {{/if}}" +
+"                <div class=\"requirements\">" +
+"                    <span class=\"item-text\">" +
+"                        {{#if req.level}}" +
+"                            Requires Level <span class=\"color-{{tern req.level_aug \"augmented\" \"default\"}}\">{{req.level}}</span>                " +
+"                        {{/if}}" +
 "" +
-"                    {{#if req.int}}" +
-"                    , <span class=\"color-{{tern req.int_aug \"augmented\" \"default\"}}\">{{req.int}}</span> Int" +
-"                    {{/if}}" +
-"                </span>" +
-"            </div>" +
+"                        {{#if req.str}}" +
+"                            , <span class=\"color-{{tern req.str_aug \"augmented\" \"default\"}}\">{{req.str}}</span> Str" +
+"                        {{/if}}" +
+"" +
+"                        {{#if req.dex}}" +
+"                            , <span class=\"color-{{tern req.dex_aug \"augmented\" \"default\"}}\">{{req.dex}}</span> Dex" +
+"                        {{/if}}" +
+"" +
+"                        {{#if req.int}}" +
+"                            , <span class=\"color-{{tern req.int_aug \"augmented\" \"default\"}}\">{{req.int}}</span> Int" +
+"                        {{/if}}" +
+"                    </span>" +
+"                </div>" +
+"            {{/if}}" +
+"            " +
 "" +
 "            {{#if gem_desc}}" +
 "                <div class=\"separator-{{rarity}}\"></div>" +
@@ -226,6 +243,14 @@ var template="" +
 "                    </div>" +
 "                {{/if}}" +
 "            {{/eq}}" +
+"" +
+"            {{#if description}}" +
+"                <div class=\"separator-{{rarity}}\"></div>" +
+"" +
+"                <div>" +
+"                    <span class=\"font-italic item-text\">{{description}}</span><br>" +
+"                </div>" +
+"            {{/if}}" +
 "" +
 "            {{#if effects}}" +
 "                <div class=\"separator-{{rarity}}\"></div>" +
@@ -347,10 +372,23 @@ var shav = {
     flavor_text: "Shavronne's apparel became ever more extravagant<br>as her body and soul became ever more corrupted."
 };
 
+var exalt = {
+    item_name: "Mirror of Kalandra",
+    rarity: "currency",
+    img: "http://webcdn.pathofexile.com/image/Art/2DItems/Currency/CurrencyDuplicate.png?scale=1",
+    maxStackSize: 10,
+    stackSize: 3000,
+
+    implicit_mod: "Creates a mirrored copy of an item",
+    description: "Right click this item then left click an equipable<br>non-unique item to apply it. Mirrored copies cannot<br>be modified."
+};
+
 var item1 = createItem(armour);
 var item2 = createItem(gem);
 var item3 = createItem(shav);
+var item4 = createItem(exalt);
 
 $(".well").append(item1);
 $(".well").append(item2);
 $(".well").append(item3);
+$(".well").append(item4);

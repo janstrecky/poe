@@ -38,6 +38,12 @@ exports.items_armour = function(req, res) {
     res.render("items-armour", { title: "Armour" });
 };
 
+/* Currency items Route
+ * ====================== */
+exports.items_currency = function(req, res) {
+    res.render("items-currency", { title: "Currency" });
+};
+
 
 /* 404 Route
  * ====================== */

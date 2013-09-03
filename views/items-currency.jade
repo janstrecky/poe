@@ -14,15 +14,14 @@ block content
 
         hr
 
-        each item, type in jewelry
+        each item, type in currency
             h3= type
 
             table.table.table-striped.table-bordered.table-hover.table-condensed
                 tr
-                    th Name
-                    th Level
-                    th Implicit Mods
-                    th Mod Values
+                    th(style="width:200px;") Name
+                    th Stack Size
+                    th Description
 
                 for o in item
                     tr
@@ -31,16 +30,5 @@ block content
                             a.ez(href="#")= o.name
                                 span.ez
                                     img(src=o.largeImg)
-                        td= o.lvl
-                        if o.multi
-                            td
-                                | #{o.impMod1}
-                                br
-                                | #{o.impMod2}
-                            td
-                                | #{o.modValue1}
-                                br
-                                | #{o.modValue2}
-                        else
-                            td= o.impMods
-                            td= o.modValues
+                        td= o.stackSize
+                        td= o.description
