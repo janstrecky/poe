@@ -4,6 +4,7 @@
     - Add fixed headers to mod/item tables
     - Create a variable for the item template instead of Ajax get (done)
     - Don't log errors from express-error
+    - Create a colophon? http://redd.it/1lj6dy
 
    Notes:
     - (100+percentIncrease) % of (base+plusIncrease) + 20%
