@@ -10,6 +10,8 @@ Requirements
 
 [bower](http://bower.io)
 
+![Alt](https://www.codeship.io/projects/1ebe9c30-f719-0130-bd09-22e575f1ccbd/status)
+
 ## License
 The MIT License (MIT)
 
