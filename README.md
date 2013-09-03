@@ -1,7 +1,7 @@
 express-template
 ===
 
-More info will be added later
+More info will be added later!
 
 Requirements
 ---
