@@ -116,8 +116,6 @@ app.get("/err", function(req, res) {
 });
 
 
-
-
 /* Handle 404 and 500.
    This should be called after all other routes
  * ====================== */
