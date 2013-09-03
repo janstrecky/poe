@@ -10,7 +10,7 @@ Requirements
 
 [bower](http://bower.io)
 
-![Alt](https://www.codeship.io/projects/1ebe9c30-f719-0130-bd09-22e575f1ccbd/status)
+[ ![Codeship Status for r3Fuze/poe](https://www.codeship.io/projects/1ebe9c30-f719-0130-bd09-22e575f1ccbd/status?branch=master)](https://www.codeship.io/projects/6602)
 
 ## License
 The MIT License (MIT)
