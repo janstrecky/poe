@@ -3,9 +3,13 @@
     - Use CDN for bootstrap/bootswatch (done)
     - Add fixed headers to mod/item tables
     - Create a variable for the item template instead of Ajax get (done)
+    - Don't log errors from express-error
 
    Notes:
     - (100+percentIncrease) % of (base+plusIncrease) + 20%
+    - Find package for error handling
+        - barc/express-error (4-5)
+
  * ====================== */
 var express     = require("express"),
     http        = require("http"),
@@ -36,6 +40,7 @@ app.configure(function() {
     app.use(express.bodyParser());
     app.use(express.cookieParser());
     app.use(express.methodOverride());
+
     // app.use(express.session({ secret: conf.session_secret })); this gives err 500
 
     // Set the local property 'url' to the current url. Used for navbar
@@ -84,6 +89,12 @@ app.configure(function() {
     }));
 
     app.use(express.static(__dirname + "/public"));
+
+    app.use(require("express-error").express3({
+        contextLinesCount: 3,
+        handleUncaughtException: true,
+        title: "I dun goofed.."
+    }));
 });
 
 
@@ -100,6 +111,10 @@ app.get("/items/armor", routes.items_armour); // use redirect?
 app.get("/items/jewelry", routes.items_jewelry);
 app.get("/items/currency", routes.items_currency);
 
+app.get("/err", function(req, res) {
+    app.wat();
+});
+
 
 
 
@@ -107,7 +122,7 @@ app.get("/items/currency", routes.items_currency);
    This should be called after all other routes
  * ====================== */
 app.use(routes._404);
-app.use(routes._500);
+// app.use(routes._500);
 
 
 /* Create the server
