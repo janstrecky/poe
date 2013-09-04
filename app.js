@@ -126,9 +126,17 @@ app.use(routes._404);
 
 /* Create the server
  * ====================== */
-var server = http.createServer(app).listen(conf.PORT, conf.IP, function() {
-    log.info("Express server listening on %s:%s", conf.IP, conf.PORT);
-});
+var server = http.createServer(app);
+
+exports.listen = function() {
+    server.listen(conf.PORT, conf.IP, function() {
+        log.info("Express server listening on %s:%s", conf.IP, conf.PORT);
+    });
+};
+
+exports.close = function(callback) {
+    server.close(callback);
+};
 
 // io = io.listen(server);
 /*io.sockets.on("connection", function(socket) {

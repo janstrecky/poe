@@ -1,21 +1,32 @@
+/* jshint expr: true */
+
 var chai   = require("chai"),
-    // expect = chai.expect,
+    expect = chai.expect,
     should = chai.should();
 
+var request = require("superagent"),
+    app     = require("../app");
+
+
+
 describe("App", function() {
-    /*describe("#indexOf()", function() {
-        it("should return -1 when the value is not present", function() {
-            [1, 2, 3].indexOf(5).should.be.equal(-1);
-            [1, 2, 3].indexOf(0).should.be.equal(-1);
-        });
 
-        it("should return -1 when the value is not present 2", function() {
-            [1, 2, 3].indexOf(5).should.be.equal(-1);
-            [1, 2, 3].indexOf(0).should.be.equal(-1);
-        });
-    });*/
+    before(function() {
+        app.listen();
+    });
 
-    /*it("should be on the web", function() {
-        (true).should.be.equal(true);
-    });*/
+    after(function() {
+        app.close();
+    });
+
+    it("should be on the web", function(done) {
+        this.timeout(5000);
+        request.get("poe.fuzelol.c9.io", function(res) {
+
+            expect(res).to.exist;
+            expect(res.status).to.equal(200);
+
+            done();
+        });
+    });
 });

@@ -20,6 +20,7 @@
     "jake": "~0.6.11",
     "jshint": "~2.1.10",
     "chai": "~1.7.2",
-    "express-error": "0.0.7"
+    "express-error": "0.0.7",
+    "superagent": "~0.15.4"
   }
 }
