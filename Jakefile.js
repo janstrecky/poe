@@ -3,13 +3,9 @@
  * ====================== */
 var conf = require("./conf");
 
-require("jake-utils");
-
 
 desc("Lint JavaScript files");
 task("lint", function() {
-    start(this.description);
-
     var lint = require("./lib/jakelint.js");
 
     var files = new jake.FileList();
@@ -22,7 +18,6 @@ task("lint", function() {
 
 desc("Run tests with Mocha");
 task("test", function() {
-    start(this.description);
     var mocha = require("./lib/mocha-glob");
     var options = conf.mochaOptions;
 
@@ -34,9 +29,7 @@ task("test", function() {
 
 desc("Task description");
 task("taskname", function() {
-    start("Task start");
 
-    end("Task done");
 });
 
 task("default", ["lint", "test"]);
