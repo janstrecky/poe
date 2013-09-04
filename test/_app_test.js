@@ -21,7 +21,7 @@ describe("App", function() {
 
     it("should be on the web", function(done) {
         this.timeout(5000);
-        request.get("poe.fuzelol.c9.io", function(res) {
+        request.get(process.env.IP + ":" + process.env.PORT, function(res) {
 
             expect(res).to.exist;
             expect(res.status).to.equal(200);
