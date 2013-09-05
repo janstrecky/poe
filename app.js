@@ -5,6 +5,7 @@
     - Create a variable for the item template instead of Ajax get (done)
     - Don't log errors from express-error
     - Create a colophon? http://redd.it/1lj6dy
+    - Fix default theme CDN
 
    Notes:
     - (100+percentIncrease) % of (base+plusIncrease) + 20%
@@ -94,6 +95,8 @@ app.configure(function() {
     app.use(require("express-error").express3({
         contextLinesCount: 3,
         handleUncaughtException: true,
+        showStack: true,
+        dumpExceptions: true,
         title: "I dun goofed.."
     }));
 });
@@ -128,10 +131,8 @@ app.use(routes._404);
  * ====================== */
 var server = http.createServer(app);
 
-exports.listen = function() {
-    server.listen(conf.PORT, conf.IP, function() {
-        log.info("Express server listening on %s:%s", conf.IP, conf.PORT);
-    });
+exports.listen = function(callback) {
+    server.listen(conf.PORT, conf.IP, callback);
 };
 
 exports.close = function(callback) {

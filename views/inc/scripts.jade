@@ -5,6 +5,7 @@ script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
 script(src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js")
 
 script(src="/libs/jquery.cookie/jquery.cookie.js")
+script(src="/libs/FontFavi.js/FontFav.min.js")
 script(src="/libs/jquery.fixedheadertable/jquery.fixedheadertable.min.js")
 script(src="/libs/underscore/underscore-min.js")
 script(src="/libs/handlebars/handlebars.js")
@@ -23,6 +24,9 @@ script.
         console.log("Clicked " + newTheme);
 
         $.cookie("app_theme", newTheme, { expires: 365 * 10, path: "/" });
+        mixpanel.track("Changed Theme", {
+            "New Theme": newTheme
+        });
         location.reload();
         //$("#theme-css").attr("href", "//netdna.bootstrapcdn.com/bootswatch/3.0.0/" + newTheme + "/bootstrap.min.css");
     });
