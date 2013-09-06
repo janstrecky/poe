@@ -18,33 +18,29 @@ block content
             h3= type
 
             table.table.table-striped.table-bordered.table-hover.table-condensed
-                tr
-                    th Name
-                    th Level
-                    th Damage
-                    th APS
-                    th DPS
-                    th Req Str
-                    th Req Dex
-                    th Req Int
-
-                for o in item
+                thead
                     tr
-                        td#item-name(data-type=type)
-                            img.pull-left.small-img(src=o.smallImg)
-                            a.ez(href="#")= o.name
-                                span.ez
-                                    img(src=o.largeImg)
-                        td= o.lvl
-                        td= o.damage
-                        td= o.speed
-                        td= o.dps
-                        td= o.reqStr
-                        td= o.reqDex
-                        td= o.reqInt
+                        th Name
+                        th Level
+                        th Damage
+                        th APS
+                        th DPS
+                        th Req Str
+                        th Req Dex
+                        th Req Int
 
-block scripts
-    script.
-        $(document).on("click", "#item-name", function(e) {
-            e.preventDefault();
-        });
+                tbody
+                    for o in item
+                        tr
+                            td#item-name(data-type=type)
+                                img.pull-left.small-img(src=o.smallImg)
+                                a.ez(href="#")= o.name
+                                    span.ez
+                                        img(src=o.largeImg)
+                            td= o.lvl
+                            td= o.damage
+                            td= o.speed
+                            td= o.dps
+                            td= o.reqStr
+                            td= o.reqDex
+                            td= o.reqInt

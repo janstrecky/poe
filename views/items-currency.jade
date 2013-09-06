@@ -18,17 +18,19 @@ block content
             h3= type
 
             table.table.table-striped.table-bordered.table-hover.table-condensed
-                tr
-                    th(style="width:200px;") Name
-                    th Stack Size
-                    th Description
-
-                for o in item
+                thead
                     tr
-                        td#item-name(data-type=type)
-                            img.pull-left.small-img(src=o.smallImg)
-                            a.ez(href="#")= o.name
-                                span.ez
-                                    img(src=o.largeImg)
-                        td= o.stackSize
-                        td= o.description
+                        th(style="width:200px;") Name
+                        th Stack Size
+                        th Description
+
+                tbody
+                    for o in item
+                        tr
+                            td#item-name(data-type=type)
+                                img.pull-left.small-img(src=o.smallImg)
+                                a.ez(href="#")= o.name
+                                    span.ez
+                                        img(src=o.largeImg)
+                            td= o.stackSize
+                            td= o.description

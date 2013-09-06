@@ -18,29 +18,31 @@ block content
             h3= type
 
             table.table.table-striped.table-bordered.table-hover.table-condensed
-                tr
-                    th Name
-                    th Level
-                    th Implicit Mods
-                    th Mod Values
-
-                for o in item
+                thead
                     tr
-                        td#item-name(data-type=type)
-                            img.pull-left.small-img(src=o.smallImg)
-                            a.ez(href="#")= o.name
-                                span.ez
-                                    img(src=o.largeImg)
-                        td= o.lvl
-                        if o.multi
-                            td
-                                | #{o.impMod1}
-                                br
-                                | #{o.impMod2}
-                            td
-                                | #{o.modValue1}
-                                br
-                                | #{o.modValue2}
-                        else
-                            td= o.impMods
-                            td= o.modValues
+                        th Name
+                        th Level
+                        th Implicit Mods
+                        th Mod Values
+
+                tbody
+                    for o in item
+                        tr
+                            td#item-name(data-type=type)
+                                img.pull-left.small-img(src=o.smallImg)
+                                a.ez(href="#")= o.name
+                                    span.ez
+                                        img(src=o.largeImg)
+                            td= o.lvl
+                            if o.multi
+                                td
+                                    | #{o.impMod1}
+                                    br
+                                    | #{o.impMod2}
+                                td
+                                    | #{o.modValue1}
+                                    br
+                                    | #{o.modValue2}
+                            else
+                                td= o.impMods
+                                td= o.modValues
