@@ -10,14 +10,18 @@
 
 mixpanel.init("7f95e6ec220f636337ddcc78ec3b75f0");
 
-var favOptions = {
+/* Initalize Parse
+ * ====================== */
+Parse.initialize("xn8l5boDKtrXaLX7bYTYoQEdnekjZXv7NguZR3nA",
+                 "U6STlAJJh2tnxsnkAeQN2DSqFpYHp7yQuonw4rkB");
+
+
+var favicon = new FontFavi({
     fillColor: "#000000",
     fontFamily: "Lato",
     fontColor: "#FFFFFF",
     text: "PoE"
-};
-
-var favicon = new FontFavi(favOptions);
+});
 favicon.update();
 
 $(document)
